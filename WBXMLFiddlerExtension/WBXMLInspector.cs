@@ -52,21 +52,20 @@ namespace WBXMLFiddlerExtension
 
         public void Clear()
         {
-            xmlView.Clear();
-            textView.txtRaw.Clear();
-            wbxmlDoc.RemoveAll();
-            rawBody = null;
             validHeader = false;
         }
 
         private void UpdateView(byte[] raw)
         {
             tagPageControl.Clear();
+            xmlView.Clear();
+            textView.txtRaw.Clear();
+            wbxmlDoc.RemoveAll();
+            rawBody = raw;
             if(validHeader)
             {
                 tagPageControl.Add(xmlView);
                 tagPageControl[0].Dock = DockStyle.Fill;
-                rawBody = raw;
                 wbxmlDoc.LoadBytes(rawBody);
                 xmlView.SetXML(wbxmlDoc);
             }
@@ -74,7 +73,7 @@ namespace WBXMLFiddlerExtension
             {
                 tagPageControl.Add(textView);
                 tagPageControl[0].Dock = DockStyle.Fill;
-                textView.txtRaw.AppendText("Not vnd.ms-sync.wbxml package");
+                textView.txtRaw.AppendText("invalid vnd.ms-sync.wbxml package");
             }
         }
 
