@@ -36,6 +36,10 @@
     <Reference Include="Fiddler">
       <HintPath>..\..\..\software\Fiddler2\Fiddler.exe</HintPath>
     </Reference>
+    <Reference Include="Samples, Version=2.3.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\software\Fiddler2\Inspectors\Samples.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -59,19 +63,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TextView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TextView.Designer.cs">
-      <DependentUpon>TextView.cs</DependentUpon>
-    </Compile>
     <Compile Include="WBXMLInspector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="TextView.resx">
-      <DependentUpon>TextView.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ActiveSyncWBXML\ActiveSyncWBXML.csproj">

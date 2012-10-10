@@ -8,20 +8,22 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
-using Fiddler;
 using WBXML;
 using ActiveSyncDemo;
+
+using Fiddler;
+using Samples;
 
 namespace WBXMLFiddlerExtension
 {
     public class WBXMLInspector : Inspector2
     {
-        private TextView view;
+        private XMLView view;
         private byte[] rawBody;
 
         public override void AddToTab(TabPage o)
         {
-            view = new TextView();
+            view = new XMLView();
             o.Text = "WBXML";
             o.Controls.Add(view);
             o.Controls[0].Dock = DockStyle.Fill;
@@ -34,7 +36,7 @@ namespace WBXMLFiddlerExtension
 
         public void Clear()
         {
-            view.SetText(string.Empty);
+            view.Clear();
             rawBody = null;
         }
 
@@ -48,7 +50,7 @@ namespace WBXMLFiddlerExtension
 
             rawBody = raw;
             doc.LoadBytes(rawBody);
-            view.SetText(doc.OuterXml);
+            view.SetXML(doc);
         }
 
         public byte[] body
