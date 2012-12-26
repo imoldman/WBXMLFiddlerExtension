@@ -1,9 +1,9 @@
 WBXMLFiddlerExtension
 =====================
 
-This is a inspector for [Fiddler2](http://www.fiddler2.com/fiddler2/), you can view decoded wbxml info by this plugin.
+This is an inspector for [Fiddler2](http://www.fiddler2.com/fiddler2/), you can view decoded wbxml info by this plugin.
 
-# If you only what to use
+# If you only want to use
 
 * first, download and install fiddler2 (not fiddler4, which is not supported by now)
 
@@ -12,7 +12,7 @@ This is a inspector for [Fiddler2](http://www.fiddler2.com/fiddler2/), you can v
 * put all dll files ( *WBXML.dll, ActiceSyncWBXML.dll, WBXMLFiddlerExtension.dll* ) in " *${Fiddler2Dir}\Inspectors* "
 * restart Fiddler2, if everything is ok, you can see a tab named "WBXML" on Fiddler inspector panel.
 
-# If you what to build
+# If you want to build
 
 * forgive me, the doc is incomplete
 
